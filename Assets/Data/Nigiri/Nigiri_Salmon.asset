@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4780ea0cbf1e24abd9e7c5dad8bc8d5e, type: 3}
+  m_Name: Nigiri_Salmon
+  m_EditorClassIdentifier: 
+  Type: 0
+  Points: 4
+  DigestTime: 7.5
+  Size: 2
+  Prefab: {fileID: 1936495788576460, guid: 36e80d59802ab4baa9ae931075b559bd, type: 2}
