@@ -72,7 +72,8 @@ public class Stomach : MonoBehaviour
 		if (_sushiQueue.Count > 0)
 		{
 			var timeLeft = _sushiQueue.Peek().Digest(_digestAmount * Time.deltaTime);
-			_countdownText.text = $"{timeLeft:0.#}";
+			_countdownText.enabled = timeLeft > 0f;
+			_countdownText.text = $"{timeLeft:0.0}";
 		}
 	}
 
