@@ -78,6 +78,11 @@ public class Stomach : MonoBehaviour
 
 	private void FinishSushi(Sushi sushi)
 	{
+		if (!sushi.enabled)
+		{
+			return;
+		}
+		
 		Digested.Invoke(sushi);
 		_sushiPool.Despawn(_sushiQueue.Dequeue());
 		//_sushiPool.Despawn(sushi);

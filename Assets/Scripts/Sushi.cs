@@ -10,7 +10,6 @@ public class Sushi : MonoBehaviour
 	public SushiType Type { get; private set; }
 	public int Points { get; private set; }
 	public bool Digesting { get; set; }
-	public bool DoneDigesting { get; private set; }
 
 	[SerializeField]
 	private float _remainingDigestTime;
@@ -52,11 +51,10 @@ public class Sushi : MonoBehaviour
 	{
 		if (Digesting)
 		{
-			if (!DoneDigesting && _remainingDigestTime <= 0f)
+			if (_remainingDigestTime <= 0f)
 			{
 				Digested.Invoke(this);
 				Digesting = false;
-				DoneDigesting = true;
 				_initialized = false;
 			}
 			return;
