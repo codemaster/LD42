@@ -23,13 +23,16 @@ public class SushiPool : MemoryPool<SushiInfo, SushiTreadmill, Sushi>
 		item.transform.position = p2.SpawnPoint;
 		item.Initialize(p1, p2, _uiArea);
 		item.Offscreen.AddListener(Despawn);
+		item.enabled = true;
 		_activeSushi.Add(item);
 	}
 
 	protected override void OnDespawned(Sushi item)
 	{
+		base.OnDespawned(item);
+		item.transform.SetParent(_container, false);
 		item.Offscreen.RemoveListener(Despawn);
 		_activeSushi.Remove(item);
-		base.OnDespawned(item);
+		item.enabled = false;
 	}
 }
